@@ -9,13 +9,29 @@
 /* Begin PBXBuildFile section */
 		AF7B7527242F56EB0091421A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7526242F56EB0091421A /* AppDelegate.swift */; };
 		AF7B7529242F56EB0091421A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7528242F56EB0091421A /* SceneDelegate.swift */; };
-		AF7B752C242F56EB0091421A /* Thirukural.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF7B752A242F56EB0091421A /* Thirukural.xcdatamodeld */; };
-		AF7B752E242F56EB0091421A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B752D242F56EB0091421A /* ContentView.swift */; };
 		AF7B7530242F56EE0091421A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7B752F242F56EE0091421A /* Assets.xcassets */; };
 		AF7B7533242F56EE0091421A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7B7532242F56EE0091421A /* Preview Assets.xcassets */; };
 		AF7B7536242F56EE0091421A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7B7534242F56EE0091421A /* LaunchScreen.storyboard */; };
 		AF7B7541242F56EF0091421A /* ThirukuralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7540242F56EF0091421A /* ThirukuralTests.swift */; };
 		AF7B754C242F56EF0091421A /* ThirukuralUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B754B242F56EF0091421A /* ThirukuralUITests.swift */; };
+		AF7B755C242F5C0F0091421A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7B755B242F5C0F0091421A /* CloudKit.framework */; };
+		AF7B7565242F5E2B0091421A /* Chapter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B755D242F5E2B0091421A /* Chapter+CoreDataClass.swift */; };
+		AF7B7566242F5E2B0091421A /* Chapter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B755E242F5E2B0091421A /* Chapter+CoreDataProperties.swift */; };
+		AF7B7567242F5E2B0091421A /* Section+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B755F242F5E2B0091421A /* Section+CoreDataClass.swift */; };
+		AF7B7568242F5E2B0091421A /* Section+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7560242F5E2B0091421A /* Section+CoreDataProperties.swift */; };
+		AF7B7569242F5E2B0091421A /* Couplet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7561242F5E2B0091421A /* Couplet+CoreDataClass.swift */; };
+		AF7B756A242F5E2B0091421A /* Couplet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7562242F5E2B0091421A /* Couplet+CoreDataProperties.swift */; };
+		AF7B756B242F5E2B0091421A /* SubSection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7563242F5E2B0091421A /* SubSection+CoreDataClass.swift */; };
+		AF7B756C242F5E2B0091421A /* SubSection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7564242F5E2B0091421A /* SubSection+CoreDataProperties.swift */; };
+		AF7B756F242F603C0091421A /* ThirukuralCloudKitRecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B756E242F603C0091421A /* ThirukuralCloudKitRecordType.swift */; };
+		AF7B7571242F63730091421A /* Thirukural.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF7B752A242F56EB0091421A /* Thirukural.xcdatamodeld */; };
+		AF7B7574242F64190091421A /* CloudkitOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7573242F64190091421A /* CloudkitOperator.swift */; };
+		AF7B7576242F64570091421A /* CloudKitToCoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B7575242F64570091421A /* CloudKitToCoreDataHandler.swift */; };
+		AF7B75F8242F86B60091421A /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B75F7242F86B60091421A /* SectionView.swift */; };
+		AF7B75FA2430D06E0091421A /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B75F92430D06E0091421A /* ChapterView.swift */; };
+		AF7B75FC2430D8C50091421A /* CoupletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B75FB2430D8C50091421A /* CoupletView.swift */; };
+		AF7B75FE2430E5C30091421A /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B75FD2430E5C30091421A /* ExplanationView.swift */; };
+		AF7B76002431E23C0091421A /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B75FF2431E23C0091421A /* DownloadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +56,6 @@
 		AF7B7526242F56EB0091421A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF7B7528242F56EB0091421A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AF7B752B242F56EB0091421A /* Thirukural.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thirukural.xcdatamodel; sourceTree = "<group>"; };
-		AF7B752D242F56EB0091421A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF7B752F242F56EE0091421A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF7B7532242F56EE0091421A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF7B7535242F56EE0091421A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +66,24 @@
 		AF7B7547242F56EF0091421A /* ThirukuralUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirukuralUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7B754B242F56EF0091421A /* ThirukuralUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirukuralUITests.swift; sourceTree = "<group>"; };
 		AF7B754D242F56EF0091421A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF7B7559242F5BF20091421A /* Thirukural.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Thirukural.entitlements; sourceTree = "<group>"; };
+		AF7B755B242F5C0F0091421A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AF7B755D242F5E2B0091421A /* Chapter+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF7B755E242F5E2B0091421A /* Chapter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chapter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF7B755F242F5E2B0091421A /* Section+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF7B7560242F5E2B0091421A /* Section+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF7B7561242F5E2B0091421A /* Couplet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Couplet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF7B7562242F5E2B0091421A /* Couplet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Couplet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF7B7563242F5E2B0091421A /* SubSection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubSection+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF7B7564242F5E2B0091421A /* SubSection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubSection+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF7B756E242F603C0091421A /* ThirukuralCloudKitRecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirukuralCloudKitRecordType.swift; sourceTree = "<group>"; };
+		AF7B7573242F64190091421A /* CloudkitOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudkitOperator.swift; sourceTree = "<group>"; };
+		AF7B7575242F64570091421A /* CloudKitToCoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitToCoreDataHandler.swift; sourceTree = "<group>"; };
+		AF7B75F7242F86B60091421A /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		AF7B75F92430D06E0091421A /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
+		AF7B75FB2430D8C50091421A /* CoupletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupletView.swift; sourceTree = "<group>"; };
+		AF7B75FD2430E5C30091421A /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
+		AF7B75FF2431E23C0091421A /* DownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7B755C242F5C0F0091421A /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +119,7 @@
 				AF7B753F242F56EF0091421A /* ThirukuralTests */,
 				AF7B754A242F56EF0091421A /* ThirukuralUITests */,
 				AF7B7524242F56EB0091421A /* Products */,
+				AF7B755A242F5C0F0091421A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,12 +136,19 @@
 		AF7B7525242F56EB0091421A /* Thirukural */ = {
 			isa = PBXGroup;
 			children = (
+				AF7B7559242F5BF20091421A /* Thirukural.entitlements */,
 				AF7B7526242F56EB0091421A /* AppDelegate.swift */,
 				AF7B7528242F56EB0091421A /* SceneDelegate.swift */,
-				AF7B752D242F56EB0091421A /* ContentView.swift */,
+				AF7B75F7242F86B60091421A /* SectionView.swift */,
+				AF7B75F92430D06E0091421A /* ChapterView.swift */,
+				AF7B75FB2430D8C50091421A /* CoupletView.swift */,
+				AF7B75FD2430E5C30091421A /* ExplanationView.swift */,
+				AF7B75FF2431E23C0091421A /* DownloadView.swift */,
+				AF7B7572242F63FF0091421A /* protocols */,
 				AF7B752F242F56EE0091421A /* Assets.xcassets */,
 				AF7B7534242F56EE0091421A /* LaunchScreen.storyboard */,
 				AF7B7537242F56EE0091421A /* Info.plist */,
+				AF7B756D242F5E400091421A /* Model */,
 				AF7B752A242F56EB0091421A /* Thirukural.xcdatamodeld */,
 				AF7B7531242F56EE0091421A /* Preview Content */,
 			);
@@ -137,6 +179,39 @@
 				AF7B754D242F56EF0091421A /* Info.plist */,
 			);
 			path = ThirukuralUITests;
+			sourceTree = "<group>";
+		};
+		AF7B755A242F5C0F0091421A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF7B755B242F5C0F0091421A /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF7B756D242F5E400091421A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF7B756E242F603C0091421A /* ThirukuralCloudKitRecordType.swift */,
+				AF7B7560242F5E2B0091421A /* Section+CoreDataProperties.swift */,
+				AF7B7564242F5E2B0091421A /* SubSection+CoreDataProperties.swift */,
+				AF7B755E242F5E2B0091421A /* Chapter+CoreDataProperties.swift */,
+				AF7B7562242F5E2B0091421A /* Couplet+CoreDataProperties.swift */,
+				AF7B755F242F5E2B0091421A /* Section+CoreDataClass.swift */,
+				AF7B7563242F5E2B0091421A /* SubSection+CoreDataClass.swift */,
+				AF7B755D242F5E2B0091421A /* Chapter+CoreDataClass.swift */,
+				AF7B7561242F5E2B0091421A /* Couplet+CoreDataClass.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF7B7572242F63FF0091421A /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AF7B7573242F64190091421A /* CloudkitOperator.swift */,
+				AF7B7575242F64570091421A /* CloudKitToCoreDataHandler.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +345,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7B7571242F63730091421A /* Thirukural.xcdatamodeld in Sources */,
+				AF7B75FA2430D06E0091421A /* ChapterView.swift in Sources */,
+				AF7B7567242F5E2B0091421A /* Section+CoreDataClass.swift in Sources */,
 				AF7B7527242F56EB0091421A /* AppDelegate.swift in Sources */,
-				AF7B752C242F56EB0091421A /* Thirukural.xcdatamodeld in Sources */,
-				AF7B752E242F56EB0091421A /* ContentView.swift in Sources */,
+				AF7B76002431E23C0091421A /* DownloadView.swift in Sources */,
+				AF7B7574242F64190091421A /* CloudkitOperator.swift in Sources */,
+				AF7B756A242F5E2B0091421A /* Couplet+CoreDataProperties.swift in Sources */,
 				AF7B7529242F56EB0091421A /* SceneDelegate.swift in Sources */,
+				AF7B7566242F5E2B0091421A /* Chapter+CoreDataProperties.swift in Sources */,
+				AF7B7568242F5E2B0091421A /* Section+CoreDataProperties.swift in Sources */,
+				AF7B756C242F5E2B0091421A /* SubSection+CoreDataProperties.swift in Sources */,
+				AF7B75F8242F86B60091421A /* SectionView.swift in Sources */,
+				AF7B7569242F5E2B0091421A /* Couplet+CoreDataClass.swift in Sources */,
+				AF7B756B242F5E2B0091421A /* SubSection+CoreDataClass.swift in Sources */,
+				AF7B7565242F5E2B0091421A /* Chapter+CoreDataClass.swift in Sources */,
+				AF7B756F242F603C0091421A /* ThirukuralCloudKitRecordType.swift in Sources */,
+				AF7B75FC2430D8C50091421A /* CoupletView.swift in Sources */,
+				AF7B75FE2430E5C30091421A /* ExplanationView.swift in Sources */,
+				AF7B7576242F64570091421A /* CloudKitToCoreDataHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +528,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Thirukural/Thirukural.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Thirukural/Preview Content\"";
 				DEVELOPMENT_TEAM = 6VM6FR9D2D;
@@ -447,8 +539,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anbarasu.Thirukural;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anbarasu.thirukural;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,6 +551,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Thirukural/Thirukural.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Thirukural/Preview Content\"";
 				DEVELOPMENT_TEAM = 6VM6FR9D2D;
@@ -467,8 +562,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.anbarasu.Thirukural;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anbarasu.thirukural;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
