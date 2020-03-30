@@ -64,6 +64,8 @@ struct SubSectionView: View {
                     HStack {
                         Text("\(index+1)").modifier(IndexLabel())
                         Text(self.fetchRequest.wrappedValue[index].subSectionTamil)
+                        Spacer()
+                        Text(self.fetchRequest.wrappedValue[index].coupletRange).modifier(CoupletRangeLabel())
                     }
                 }
             }
