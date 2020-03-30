@@ -28,12 +28,14 @@ struct CoupletView: View {
         List {
             ForEach(fetchRequest.wrappedValue) { couplet in
                 NavigationLink(destination: ExplanationView(couplet: couplet)) {
-                    Text(couplet.coupletTamil)
+                    HStack(alignment: .bottom) {
+                        Text(couplet.coupletTamil)
+                        Spacer()
+                        Text(commaLessIntegerFormatter.string(for: couplet.coupletIndex)!)
+                            .modifier(CoupletRangeLabel())
+                    }
                 }
-
             }
-        }
-
-            .navigationBarTitle(Text("\(selectedChapter.chapterTamil)"))
+        }.navigationBarTitle(Text("\(selectedChapter.chapterTamil)"))
     }
 }

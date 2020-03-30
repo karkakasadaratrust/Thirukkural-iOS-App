@@ -51,7 +51,6 @@ struct SectionView: View, CloudKitToCoreDataHandler, CloudKitOperator {
 struct SubSectionView: View {
     private var fetchRequest: FetchRequest<CDSubSection>
     init(section: CDSection) {
-        print(section)
         fetchRequest = FetchRequest<CDSubSection>(
             entity: CDSubSection.entity(),
             sortDescriptors: [NSSortDescriptor(key: "subSectionIndex", ascending: true)],
@@ -59,15 +58,42 @@ struct SubSectionView: View {
     }
     var body: some View {
         List {
-            ForEach(fetchRequest.wrappedValue) { subSection in
-                NavigationLink(destination: ChapterView(subSection: subSection)) {
-                    Text("\(subSection.subSectionTamil)")
-                }
+            ForEach(fetchRequest.wrappedValue.indices, id: \.self) { index in
+                NavigationLink(destination: ChapterView(subSection: self.fetchRequest.wrappedValue[index])) {
 
+                    HStack {
+                        Text("\(index+1)").modifier(IndexLabel())
+                        Text(self.fetchRequest.wrappedValue[index].subSectionTamil)
+                    }
+                }
             }
         }
     }
+
+
 }
+
+struct IndexLabel: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 15))
+            .foregroundColor(.white)
+            .frame(width: 25, height: 25)
+            .background(Color.gray)
+            .cornerRadius(6)
+    }
+}
+
+struct CoupletRangeLabel: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 12))
+            .foregroundColor(.red)
+            .padding(.trailing, 20)
+    }
+}
+
+
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {

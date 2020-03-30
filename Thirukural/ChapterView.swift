@@ -23,14 +23,34 @@ struct ChapterView: View {
     var body: some View {
 
         List {
-            ForEach(fetchRequest.wrappedValue) { chapter in
-                NavigationLink(destination: CoupletView(chapter: chapter)) {
-                    Text("\(chapter.chapterTamil)")
+
+            ForEach(fetchRequest.wrappedValue.indices, id: \.self) { index in
+                NavigationLink(destination: CoupletView(chapter: self.fetchRequest.wrappedValue[index])) {
+                    HStack(alignment: .bottom) {
+                        Text("\(index+1)")
+                            .modifier(IndexLabel())
+                        Text("\(self.fetchRequest.wrappedValue[index].chapterTamil)")
+                        Spacer()
+                        Text(self.indexStringForChapter(self.fetchRequest.wrappedValue[index]))
+                            .fontWeight(.medium)
+                            .modifier(CoupletRangeLabel())
+                    }
+
                 }
             }
         }
 
             .navigationBarTitle(Text("\(selectedSubSection.subSectionTamil)")) 
     }
+
+    func indexStringForChapter(_ chapter:CDChapter) -> String {
+        let startNumber = chapter.chapterIndex*10-9 as NSNumber
+        return commaLessIntegerFormatter.string(from: startNumber)!
+    }
 }
 
+var commaLessIntegerFormatter: NumberFormatter {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .none
+    return formatter
+}
