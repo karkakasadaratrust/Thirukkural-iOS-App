@@ -121,7 +121,7 @@ extension CloudKitOperator {
             }
 
             if let queryCursor = cursor {
-                prettyPrint("got cursor -\(queryCursor) - performing next fetch")
+//                prettyPrint("got cursor -\(queryCursor) - performing next fetch")
                 let queryCursorOperation = CKQueryOperation(cursor: queryCursor)
                 queryCursorOperation.database = queryOperation.database
                 self.performQueryOperation(queryCursorOperation, onOperationQueue: operationQueue, managedObjectContext: moc, completionBlock: completionBlock)

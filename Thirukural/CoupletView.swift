@@ -26,16 +26,28 @@ struct CoupletView: View {
 
     var body: some View {
         List {
-            ForEach(fetchRequest.wrappedValue) { couplet in
-                NavigationLink(destination: ExplanationView(couplet: couplet)) {
-                    HStack(alignment: .bottom) {
-                        Text(couplet.coupletTamil)
-                        Spacer()
-                        Text(commaLessIntegerFormatter.string(for: couplet.coupletIndex)!)
-                            .modifier(CoupletRangeLabel())
+
+            Section(header: Text("பாயிரம்")) {
+                NavigationLink(destination: ExplanationView(vm: ExplanationViewModel(chapter: selectedChapter))) {
+                    Text(selectedChapter.payiram)
+                    .lineLimit(3)
+                }
+            }
+
+            Section(header: Text("குறள்")) {
+                ForEach(fetchRequest.wrappedValue) { couplet in
+                    NavigationLink(destination: ExplanationView(vm: ExplanationViewModel(couplet: couplet))) {
+                        HStack(alignment: .bottom) {
+                            Text(couplet.coupletTamil)
+                            Spacer()
+                            Text(commaLessIntegerFormatter.string(for: couplet.coupletIndex)!)
+                                .modifier(CoupletRangeLabel())
+                        }
                     }
                 }
             }
-        }.navigationBarTitle(Text("\(selectedChapter.chapterTamil)"))
+
+            }.listStyle(GroupedListStyle())
+            .navigationBarTitle(Text("\(selectedChapter.chapterTamil)"))
     }
 }

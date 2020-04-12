@@ -65,23 +65,25 @@ extension CDSubSection: Identifiable {
 
     }
 
-    var coupletRange: String {
-        print(self.subSectionIndex)
+    var childCoupletsIndexRange: (firstIndex: Int, lastIndex: Int) {
         switch self.subSectionIndex {
-        case 1: return "1 - 40"
-        case 2: return "41 - 240"
-        case 3: return "241 - 370"
-        case 4: return "371 - 380"
-        case 5: return "381 - 630"
-        case 6: return "631 - 730"
-        case 7: return "731 - 950"
-        case 8: return "951 - 1080"
-        case 9: return "1081 - 1150"
-        case 10: return "1151 - 1330"
-        default: return ""
+        case 1: return (1,40)
+        case 2: return (41,240)
+        case 3: return (241,370)
+        case 4: return (371,380)
+        case 5: return (381,630)
+        case 6: return (631,730)
+        case 7: return (731,950)
+        case 8: return (951,1080)
+        case 9: return (1081,1150)
+        case 10: return (1151,1330)
+        default: return (0,0)
         }
     }
 
+    var coupletRange: String {
+        return "\(self.childCoupletsIndexRange.firstIndex) - \(self.childCoupletsIndexRange.lastIndex)"
+    }
 
     public var id: String {
         return recordName

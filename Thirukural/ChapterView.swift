@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ChapterView: View {
+struct ChapterView: View, RandomKuralDataSorce {
     private var selectedSubSection: CDSubSection
     private var fetchRequest: FetchRequest<CDChapter>
 
@@ -22,23 +22,27 @@ struct ChapterView: View {
 
     var body: some View {
 
-        List {
+        VStack {
+            RandomKuralView(randomIndices: getRandomKuralIndexes(forSubSection: selectedSubSection))
+            List {
 
-            ForEach(fetchRequest.wrappedValue.indices, id: \.self) { index in
-                NavigationLink(destination: CoupletView(chapter: self.fetchRequest.wrappedValue[index])) {
-                    HStack(alignment: .bottom) {
-                        Text("\(index+1)")
-                            .modifier(IndexLabel())
-                        Text("\(self.fetchRequest.wrappedValue[index].chapterTamil)")
-                        Spacer()
-                        Text(self.indexStringForChapter(self.fetchRequest.wrappedValue[index]))
-                            .fontWeight(.medium)
-                            .modifier(CoupletRangeLabel())
+                ForEach(fetchRequest.wrappedValue.indices, id: \.self) { index in
+                    NavigationLink(destination: CoupletView(chapter: self.fetchRequest.wrappedValue[index])) {
+                        HStack(alignment: .bottom) {
+                            Text("\(index+1)")
+                                .modifier(IndexLabel())
+                            Text("\(self.fetchRequest.wrappedValue[index].chapterTamil)")
+                            Spacer()
+                            Text(self.indexStringForChapter(self.fetchRequest.wrappedValue[index]))
+                                .fontWeight(.medium)
+                                .modifier(CoupletRangeLabel())
+                        }
+
                     }
-
                 }
             }
         }
+
 
             .navigationBarTitle(Text("\(selectedSubSection.subSectionTamil)")) 
     }
