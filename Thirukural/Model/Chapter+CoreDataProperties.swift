@@ -51,17 +51,6 @@ extension CDChapter: Identifiable {
         return recordName
     }
 
-    public var imageName: String {
-
-        let imageName = String(format: "b%03d", self.chapterIndex)
-        if let _ = UIImage(named: imageName) {
-            return imageName
-        } else {
-            return "defaultBackground"
-        }
-
-    }
-
     public var payiram: String {
         switch self.chapterIndex {
         case 1:
@@ -80,6 +69,28 @@ extension CDChapter: Identifiable {
         default:
             return ""
         }
+    }
+
+}
+
+// properties in relation to local persistance
+extension CDChapter {
+
+    public var imageName: String {
+        let imageName = String(format: "b%03d", self.chapterIndex)
+        if let _ = UIImage(named: imageName) {
+            return imageName
+        } else {
+            return "defaultBackground"
+        }
+    }
+
+    public var fileName: String {
+        return String(format: "%03d.md", self.chapterIndex)
+    }
+
+    public var gitHubURL: URL {
+        return URL(string: "https://raw.githubusercontent.com/anbarasu0504/UyarValluvam/master/%E0%AE%85%E0%AE%A4%E0%AE%BF%E0%AE%95%E0%AE%BE%E0%AE%B0%E0%AE%AE%E0%AF%8D/\(fileName)")!
     }
 
 }

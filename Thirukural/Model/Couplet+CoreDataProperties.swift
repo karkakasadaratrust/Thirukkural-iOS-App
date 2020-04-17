@@ -82,3 +82,17 @@ extension CDCouplet: Identifiable {
     
 
 }
+
+
+// properties in relation to local persistance
+extension CDCouplet {
+
+    public var fileName: String {
+        return String(format: "%04d.md", self.coupletIndex)
+    }
+
+    public var gitHubURL: URL {
+        return URL(string: "https://raw.githubusercontent.com/anbarasu0504/UyarValluvam/master/%E0%AE%95%E0%AF%81%E0%AE%B1%E0%AE%B3%E0%AF%8D/\(fileName)")!
+    }
+
+}

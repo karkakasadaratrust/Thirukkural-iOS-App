@@ -16,12 +16,39 @@ final class ExplanationViewModel: ObservableObject {
     public var couplet: CDCouplet?
     public var chapter: CDChapter?
 
+
+    private var gitHubURL: URL!
+    private var fileName: String!
+
+
     init(couplet: CDCouplet) {
+        self.fileName = couplet.fileName
+        self.gitHubURL = couplet.gitHubURL
         self.couplet = couplet
+
     }
 
     init(chapter: CDChapter) {
+        self.fileName = chapter.fileName
+        self.gitHubURL = chapter.gitHubURL
         self.chapter = chapter
+    }
+
+    init(section: CDSection) {
+        self.fileName = section.fileName
+        self.gitHubURL = section.gitHubURL
+    }
+
+    init(subSection: CDSubSection) {
+        self.fileName = subSection.fileName
+        self.gitHubURL = subSection.gitHubURL
+    }
+
+    private var fileURL: URL {
+            let cacheDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let fileUrl = cacheDir.appendingPathComponent(fileName)
+            prettyPrint(fileUrl)
+            return fileUrl
     }
 
     var attributedText = "" {
@@ -32,29 +59,6 @@ final class ExplanationViewModel: ObservableObject {
         }
     }
 
-    var fileName: String {
-        if let _ = self.couplet {
-            return String(format: "%04d.md", couplet!.coupletIndex)
-        } else {
-            return String(format: "%03d.md", chapter!.chapterIndex)
-        }
-    }
-
-    var gitHubURL: URL {
-        if self.couplet != nil {
-            return URL(string: "https://raw.githubusercontent.com/anbarasu0504/UyarValluvam/master/%E0%AE%95%E0%AF%81%E0%AE%B1%E0%AE%B3%E0%AF%8D/\(fileName)")!
-        } else {
-//            https://raw.githubusercontent.com/anbarasu0504/UyarValluvam/master/அதிகாரம்/001.md
-            return URL(string: "https://raw.githubusercontent.com/anbarasu0504/UyarValluvam/master/%E0%AE%85%E0%AE%A4%E0%AE%BF%E0%AE%95%E0%AE%BE%E0%AE%B0%E0%AE%AE%E0%AF%8D/\(fileName)")!
-        }
-    }
-
-    var fileURL: URL {
-            let cacheDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            let fileUrl = cacheDir.appendingPathComponent(fileName)
-            prettyPrint(fileUrl)
-            return fileUrl
-    }
 
     func fetchFileFromInternet() {
 

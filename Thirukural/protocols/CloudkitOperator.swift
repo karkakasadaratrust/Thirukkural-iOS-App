@@ -97,7 +97,7 @@ extension CloudKitOperator {
         //2.
         queryOperation.recordFetchedBlock = { (record: CKRecord) -> Void in
             // process each record
-            prettyPrint(record)
+//            prettyPrint(record)
 
             DispatchQueue.main.async { // Correct
                self.addRecordToCoreData(record, moc, completionBlock: { (success) in

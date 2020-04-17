@@ -21,6 +21,9 @@ struct PaalView: View {
 
     var body: some View {
         VStack {
+
+            // section header
+
             HStack {
                 Text(selectedSection.sectionTamil)
                 .font(.largeTitle)
@@ -32,19 +35,21 @@ struct PaalView: View {
 
             // insert payiram button
 
-            Text("இந்திரன் முதலிய இறையவர் பதங்களும்1, அந்தமிலின்பத்தழிவில் வீடும் நெறியறிந்து எய்துதற்குரிய மாந்தர்க்கு உறுதியென உயர்ந்தோரானெடுக்கப்பட்ட பொருள் நான்கு. அவை அறம், பொருள், இன்பம், வீடென்பன.2 அவற்றுள், வீடென்பது சிந்தையுமொழியுஞ் செல்லா நிலைமைத்தாகலின், துறவறமாகிய காரணவகையாற் கூறப்படுவதல்லது, இலக்கணவகையாற் கூறப்படாமையின், நூல்களாற் கூறப்படுவன ஏனைமூன்றுமேயாம்.")
-                .font(.system(size: 15))
-                .lineLimit(3)
-                .frame(height: 60)
-                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                .background(Color(.systemGray5))
-                .cornerRadius(15)
-                .padding(EdgeInsets(top: 15, leading: 13, bottom: 0, trailing: 20))
-
+            if selectedSection.payiram.count > 1 {
+                NavigationLink(destination: ExplanationView(vm: ExplanationViewModel(section: selectedSection))) {
+                    Text(selectedSection.payiram)
+                    .font(.system(size: 15))
+                    .lineLimit(3)
+                    .frame(height: 60)
+                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                    .foregroundColor(Color.textColor)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(15)
+                    .padding(EdgeInsets(top: 15, leading: 13, bottom: 0, trailing: 20))
+                }
+            }
 
             // insert iyal views for section - for each
-
-
 
             ForEach(fetchRequest.wrappedValue) { subSection in
                 IyalView(subSection: subSection)
