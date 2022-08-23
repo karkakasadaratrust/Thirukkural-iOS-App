@@ -21,6 +21,7 @@ extension RandomKuralDataSorce {
     If - nil - random kurals are generated for the entire range from 1 to 1330
     - else - random kurals are generated for the given sub section
     */
+    /*
     func getRandomKuralIndexes(forSubSection subSection:CDSubSection?) -> [Int] {
 
         if let subSection = subSection {
@@ -35,11 +36,13 @@ extension RandomKuralDataSorce {
 
         } else {
 
-            return getRandomNumbers(amount: 10, from: 1, to: 1330)
+            return getRandomNumbers(amount: 10, from: 1, to: 1330) [100,200,300,400,500,600,700,800,900,1000]
         }
 
     }
+     */
 
+    /*
     func getRandomNumbers(amount:Int, from:Int, to:Int) -> [Int] {
 
         guard (to - from) + 1 >= amount else {
@@ -65,9 +68,11 @@ extension RandomKuralDataSorce {
         print(uniqueRandomNumbers)
         return uniqueRandomNumbers
     }
+     */
 
 }
 
+/*
 class RandomGeneratorWithSeed: RandomNumberGenerator {
 
     let seed: UInt64
@@ -90,6 +95,7 @@ class RandomGeneratorWithSeed: RandomNumberGenerator {
         return T(abs(generator.nextInt()))
     }
 }
+*/
 
 extension Date {
 

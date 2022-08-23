@@ -59,6 +59,31 @@ final class ExplanationViewModel: ObservableObject {
         }
     }
 
+    func exportArathupalForAyya(unparsedString: String) -> () {
+        guard let slicedString = unparsedString.slice(from: "உ", to: "## உயர் வள்ளுவ வகுப்பு காணொளி") else {
+            return
+        }
+
+        let cacheDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileUrl = cacheDir.appendingPathComponent("export.md")
+        print(fileUrl)
+
+        if FileManager.default.fileExists(atPath: fileUrl.path) == false {
+            do {
+                try slicedString.write(to: fileUrl, atomically: true, encoding: String.Encoding.utf8)
+            } catch {
+                // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
+            }
+        } else {
+            if let handle = FileHandle(forWritingAtPath: fileUrl.path) {
+                handle.seekToEndOfFile()
+                if let data = slicedString.data(using: .utf8) {
+                    handle.write(data)
+                }
+            }
+        }
+
+    }
 
     func fetchFileFromInternet() {
 
@@ -81,6 +106,7 @@ final class ExplanationViewModel: ObservableObject {
 
                 if let string = try? String(contentsOf: self.fileURL) {
                     self.attributedText = string
+                    //self.exportArathupalForAyya(unparsedString: string)
                 }
             }
         }
@@ -160,3 +186,12 @@ struct Player: UIViewControllerRepresentable {
     }
 }
 
+extension String {
+
+    func slice(from: String, to: String) -> String? {
+        guard let rangeFrom = range(of: from)?.upperBound else { return nil }
+        guard let rangeTo = self[rangeFrom...].range(of: to)?.lowerBound else { return nil }
+        return String(self[rangeFrom..<rangeTo])
+    }
+
+}

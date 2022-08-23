@@ -23,7 +23,7 @@ struct ChapterView: View, RandomKuralDataSorce {
     var body: some View {
 
         VStack {
-            RandomKuralView(randomIndices: getRandomKuralIndexes(forSubSection: selectedSubSection))
+            //RandomKuralView(randomIndices: getRandomKuralIndexes(forSubSection: selectedSubSection))
             List {
 
                 ForEach(fetchRequest.wrappedValue.indices, id: \.self) { index in
